@@ -1,0 +1,81 @@
+.paper-letterhead {
+  position: absolute;
+  left: 480px;
+  top: 50px;
+  width: 420px;
+  height: 700px;
+  background-color: var(--paper-letterhead);
+  box-shadow: var(--shadow-paper);
+  z-index: 2;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.letterhead-header {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  line-height: 1.4;
+  color: var(--ink-secondary);
+}
+
+.letterhead-content {
+  margin-top: 80px;
+}
+
+.section-label {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 4px;
+  width: 100%;
+}
+
+.client-list {
+  margin-bottom: 40px;
+}
+
+.client-item {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  margin-bottom: 8px;
+  transform: scaleX(0.95);
+  transform-origin: left;
+  cursor: pointer;
+  transition: color 0.2s;
+  color: var(--ink-primary);
+  text-decoration: none;
+  display: block;
+}
+
+.client-item:hover {
+  color: #555;
+}
+
+.bio-text {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--ink-primary);
+  max-width: 90%;
+  margin-bottom: 30px;
+}
+
+.letterhead-footer {
+  margin-top: auto;
+}
+
+.brand-logo-large {
+  font-family: var(--font-serif);
+  font-size: 42px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  transform: scaleY(1.2) scaleX(0.85);
+  transform-origin: bottom left;
+  white-space: nowrap;
+}

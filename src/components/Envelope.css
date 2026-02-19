@@ -1,0 +1,83 @@
+.paper-envelope {
+  position: absolute;
+  left: 50px;
+  top: 100px;
+  width: 380px;
+  height: 600px;
+  background-color: var(--paper-envelope);
+  box-shadow: var(--shadow-paper);
+  padding: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 25px;
+}
+
+.flap-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: var(--ink-secondary);
+}
+
+.envelope-body {
+  position: absolute;
+  top: 200px;
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+}
+
+.tagline {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  line-height: 1.3;
+  color: var(--ink-primary);
+  margin-bottom: 40px;
+  transform: scaleX(0.9);
+  transform-origin: center;
+}
+
+.nav-list {
+  list-style: none;
+  margin-top: 60px;
+}
+
+.nav-item {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
