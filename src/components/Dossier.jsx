@@ -18,8 +18,8 @@ const clients = [
   },
   {
     name: 'BEAMS JAPAN',
-    role: 'US Market Expansion',
-    url: null,
+    role: 'Campaign US Op-Ed',
+    url: 'https://www.campaignlive.com/article/18-trillion-reasons-care-black-consumers/1868722',
   },
 ];
 
