@@ -1,41 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500&family=Archivo+Narrow:wght@500;700&display=swap');
+
 :root {
-  --bg-void: #050505;
-  --paper-envelope: #D4D2CC;
-  --paper-letterhead: #F2F0EB;
-  --paper-card: #B8B6B1;
-  --ink-primary: #0a0a0a;
-  --ink-secondary: #333333;
-
-  --shadow-paper: 0 10px 40px rgba(0,0,0,0.5);
-  --shadow-card: 0 5px 20px rgba(0,0,0,0.3);
-
-  --font-serif: 'Times New Roman', Times, serif;
-  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --ink-blue: #0030D6;
+  --paper: #F2F2F2;
+  --black: #050505;
+  --border-weight: 2px;
+  --spacing-unit: 16px;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  background-color: var(--bg-void);
-  color: var(--ink-primary);
-  font-family: var(--font-sans);
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--paper);
+  color: var(--ink-blue);
+  font-family: 'JetBrains Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
 }
 
 #root {
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height: 100vh;
 }
