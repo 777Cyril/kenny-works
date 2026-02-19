@@ -19,7 +19,7 @@ export default function ContactSection() {
 
         <div className="technical-label" style={{ marginBottom: '2.5rem' }}>Ref. 04 — Correspondence</div>
 
-        <a href="mailto:kenny@goodsandobjects.com" className="group" style={{ textDecoration: 'none', display: 'block' }}>
+        <a href="mailto:kenny@goodsandobjects.com" className="contact-heading-link" style={{ textDecoration: 'none', display: 'inline-block', position: 'relative' }}>
           <h2 className="font-serif-display" style={{
             fontSize: 'clamp(3rem, 8vw, 6rem)',
             fontStyle: 'italic',
@@ -30,7 +30,7 @@ export default function ContactSection() {
           }}>
             Get in touch
           </h2>
-          <div className="h-px w-0 bg-black mx-auto mt-2 transition-all duration-500 group-hover:w-1/3" />
+          <span className="contact-underline" />
         </a>
 
         {/* Contact grid */}
