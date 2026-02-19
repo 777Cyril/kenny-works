@@ -18,19 +18,26 @@ export default function HeroSection() {
         <div className="technical-label mb-8 reveal-text">Ref. 01 — Philosophy</div>
         <h1
           className="font-serif-display text-5xl md:text-7xl lg:text-8xl leading-tight reveal-text"
-          style={{ transitionDelay: '100ms' }}
+          style={{ transitionDelay: '100ms', fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
         >
-          <span className="italic block mb-2">Shaping</span>
-          culture into stories<br />
-          <span className="italic text-4xl md:text-6xl block mt-4" style={{ opacity: 0.8 }}>
+          <span className="italic block mb-2" style={{ fontWeight: 300 }}>Shaping</span>
+          <span className="block" style={{ fontWeight: 300 }}>culture into stories</span>
+          <span className="italic text-4xl md:text-6xl block mt-4" style={{ opacity: 0.8, fontWeight: 300 }}>
             people actually feel.
           </span>
         </h1>
         <div
-          className="mt-12 max-w-md mx-auto reveal-text text-center"
+          className="mt-12 max-w-md mx-auto reveal-text"
           style={{ transitionDelay: '200ms' }}
         >
-          <p className="hero-subtitle text-lg md:text-xl leading-relaxed text-gray-600">
+          <p style={{
+            fontFamily: "'Cormorant Garamond', serif",
+            fontWeight: 300,
+            textAlign: 'center',
+            fontSize: '1.125rem',
+            lineHeight: '1.75',
+            color: '#4B5563'
+          }}>
             Bridging high culture and street-level desire.<br />
             Sophisticated, not pretentious.
           </p>
