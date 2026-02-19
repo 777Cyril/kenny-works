@@ -17,7 +17,7 @@ const clients = [
     url: 'https://lbbonline.com/news/white-claw-unveils-the-claw-bag-made-from-can-tabs-at-new-york-fashion-week',
   },
   {
-    name: 'BEAMS JAPAN',
+    name: 'CAMPAIGN LIVE OP-ED',
     role: 'Campaign US Op-Ed',
     url: 'https://www.campaignlive.com/article/18-trillion-reasons-care-black-consumers/1868722',
   },
