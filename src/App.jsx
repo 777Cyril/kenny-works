@@ -1,17 +1,13 @@
 import './App.css';
-import GrainOverlay from './components/GrainOverlay';
-import Envelope from './components/Envelope';
-import Letterhead from './components/Letterhead';
+import LeftPanel from './components/LeftPanel';
+import RightPanel from './components/RightPanel';
 
 function App() {
   return (
-    <>
-      <GrainOverlay />
-      <div className="desk-surface">
-        <Envelope />
-        <Letterhead />
-      </div>
-    </>
+    <div className="spread-container">
+      <LeftPanel />
+      <RightPanel />
+    </div>
   );
 }
 
