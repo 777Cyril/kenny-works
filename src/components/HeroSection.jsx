@@ -27,7 +27,7 @@ export default function HeroSection() {
           </span>
         </h1>
         <div
-          className="mt-20 reveal-text"
+          className="reveal-text"
           style={{ transitionDelay: '200ms', textAlign: 'center', width: '100%' }}
         >
           <p style={{
@@ -38,6 +38,7 @@ export default function HeroSection() {
             lineHeight: '1.75',
             color: '#4B5563',
             width: '100%',
+            paddingTop: '3rem',
           }}>
             Bridging high culture and street-level desire.<br />
             Sophisticated, not pretentious.
