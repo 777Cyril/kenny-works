@@ -4,14 +4,16 @@ const entries = [
   {
     id: '001',
     client: 'TIFFANY & CO.',
+    verticalTitle: 'TIFF',
     role: 'Brand Strategy / Cultural Positioning',
     year: '2023',
     tags: ['LUXURY', 'HERITAGE', 'CULTURE'],
-    url: 'https://www.vanityfair.com/style/2023/04/tiffany-and-co-reimagines-itself-for-a-new-generation',
+    url: 'https://www.vanityfair.com/style/photos/2019/10/tiffany-mens-launch-party',
   },
   {
     id: '002',
     client: 'APPLE',
+    verticalTitle: 'APPL',
     role: 'Retail Experience / Brand Semantics',
     year: '2022',
     tags: ['TECH', 'RETAIL', 'EXPERIENCE'],
@@ -20,14 +22,16 @@ const entries = [
   {
     id: '003',
     client: 'WHITE CLAW',
+    verticalTitle: 'CLAW',
     role: 'Cultural Strategy / Market Entry',
     year: '2022',
     tags: ['CPG', 'SUBCULTURE', 'STRATEGY'],
-    url: 'https://lbbonline.com/news/white-claw-finds-its-wave-with-new-campaign',
+    url: 'https://lbbonline.com/news/white-claw-unveils-the-claw-bag-made-from-can-tabs-at-new-york-fashion-week',
   },
   {
     id: '004',
     client: 'GOODS & OBJECTS',
+    verticalTitle: 'GOOD',
     role: 'Founder / Principal',
     year: '2020–',
     tags: ['VENTURE', 'CRAFT', 'JAPAN'],
@@ -36,6 +40,7 @@ const entries = [
   {
     id: '005',
     client: 'NEVER READY NY',
+    verticalTitle: 'NRNY',
     role: 'Brand Identity / Editorial Direction',
     year: '2021',
     tags: ['STREETWEAR', 'EDITORIAL', 'NYC'],
@@ -44,6 +49,7 @@ const entries = [
   {
     id: '006',
     client: 'CAMPAIGN LIVE OP-ED',
+    verticalTitle: 'CAMP',
     role: 'Campaign US Op-Ed',
     year: '2023',
     tags: ['EDITORIAL', 'OPINION', 'MEDIA'],
@@ -63,21 +69,28 @@ export default function RightPanel() {
         {entries.map((entry) => {
           const inner = (
             <>
-              <div className="entry-top">
-                <span className="entry-id">{entry.id}</span>
-                <div className="entry-tags">
-                  {entry.tags.map((tag) => (
-                    <span key={tag} className="entry-tag">{tag}</span>
-                  ))}
+              <div className="entry-vertical-title" aria-hidden="true">
+                {entry.verticalTitle.split('').map((char, i) => (
+                  <span key={i}>{char}</span>
+                ))}
+              </div>
+              <div className="entry-content">
+                <div className="entry-top">
+                  <span className="entry-id">{entry.id}</span>
+                  <div className="entry-tags">
+                    {entry.tags.map((tag) => (
+                      <span key={tag} className="entry-tag">{tag}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="entry-body">
-                <h2 className="entry-client">{entry.client}</h2>
-                <p className="entry-role">{entry.role}</p>
-              </div>
-              <div className="entry-bottom">
-                <span className="entry-year">{entry.year}</span>
-                {entry.url && <span className="entry-cta">VIEW →</span>}
+                <div className="entry-body">
+                  <h2 className="entry-client">{entry.client}</h2>
+                  <p className="entry-role">{entry.role}</p>
+                </div>
+                <div className="entry-bottom">
+                  <span className="entry-year">{entry.year}</span>
+                  {entry.url && <span className="entry-cta">VIEW →</span>}
+                </div>
               </div>
             </>
           );

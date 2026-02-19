@@ -34,11 +34,38 @@
   padding: var(--spacing-unit) 0;
   border-bottom: 1px solid var(--border-dark);
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  flex-direction: row;
+  gap: 1.5rem;
   text-decoration: none;
   color: var(--color-ink-deep);
   transition: background-color 0.2s ease;
+}
+
+.entry-vertical-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 0.1rem;
+  min-width: 2rem;
+  width: 2rem;
+}
+
+.entry-vertical-title span {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.05;
+  opacity: 0.25;
+  letter-spacing: 0;
+  display: block;
+}
+
+.entry-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .archive-entry--linked {
