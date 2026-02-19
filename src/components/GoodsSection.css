@@ -8,6 +8,8 @@
 .goods-header {
   font-family: 'Anton', sans-serif;
   font-size: 3rem;
+  font-weight: 400;
+  font-synthesis: none;
   text-transform: uppercase;
   margin-bottom: 2rem;
   border-bottom: 1px solid var(--paper);

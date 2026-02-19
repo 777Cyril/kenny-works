@@ -25,6 +25,8 @@
 .client-name {
   font-family: 'Anton', sans-serif;
   font-size: 4rem;
+  font-weight: 400;
+  font-synthesis: none;
   text-transform: uppercase;
   line-height: 0.9;
 }

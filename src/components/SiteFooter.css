@@ -5,6 +5,8 @@
   justify-content: space-between;
   font-family: 'Anton', sans-serif;
   font-size: 2rem;
+  font-weight: 400;
+  font-synthesis: none;
   text-transform: uppercase;
   color: var(--ink-blue);
 }
