@@ -34,7 +34,7 @@ export default function WorkSection() {
           <span>(2020 — 2024)</span>
         </div>
 
-        <ul className="space-y-20">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem' }}>
           {clients.map((client) => {
             const inner = (
               <>
@@ -66,12 +66,12 @@ export default function WorkSection() {
                 {inner}
               </a>
             ) : (
-              <li key={client.name} className="client-item group relative cursor-none">
+              <div key={client.name} className="client-item group relative cursor-none">
                 {inner}
-              </li>
+              </div>
             );
           })}
-        </ul>
+        </div>
       </div>
     </section>
   );
