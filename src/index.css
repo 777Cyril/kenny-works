@@ -32,20 +32,19 @@ html {
   width: 100%;
 }
 
-.font-serif-display {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 300;
-}
+@layer utilities {
+  .font-serif-display {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 300 !important;
+  }
 
-h1.font-serif-display {
-  font-weight: 300 !important;
-}
-
-.hero-subtitle {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 300;
-  text-align: center !important;
-  width: 100%;
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 300 !important;
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+  }
 }
 
 .technical-label {
