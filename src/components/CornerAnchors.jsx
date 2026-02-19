@@ -36,22 +36,20 @@ export default function CornerAnchors() {
       {/* Top Right */}
       <div className="corner-anchor top-8 right-8 flex items-center gap-4">
         <div className="text-right hidden md:block">
-          <a
-            href="https://goodsandobjects.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="technical-label block hover-target"
-            style={{ textDecoration: 'none', color: 'inherit' }}
-          >
-            Goods &amp; Objects
-          </a>
+          <span className="technical-label block">Goods &amp; Objects</span>
           <span className="technical-sub block">Consultancy Group</span>
         </div>
-        <div className="hairline-circle w-10 h-10 hover-target">
+        <a
+          href="https://goodsandobjects.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hairline-circle w-10 h-10 hover-target"
+          style={{ textDecoration: 'none', color: 'inherit' }}
+        >
           <div className="dandelion-stem">
             <div className="dandelion-head" />
           </div>
-        </div>
+        </a>
       </div>
 
       {/* Bottom Left */}
