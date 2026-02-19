@@ -1,0 +1,19 @@
+.brand-vertical {
+  position: fixed;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: left center;
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--color-shadow);
+  z-index: 20;
+  mix-blend-mode: difference;
+}
+
+@media (max-width: 1024px) {
+  .brand-vertical {
+    display: none;
+  }
+}

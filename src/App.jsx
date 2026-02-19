@@ -1,17 +1,15 @@
 import './App.css';
-import GrainOverlay from './components/GrainOverlay';
-import Envelope from './components/Envelope';
-import Letterhead from './components/Letterhead';
+import OrganicShape from './components/OrganicShape';
+import BrandVertical from './components/BrandVertical';
+import Dossier from './components/Dossier';
 
 function App() {
   return (
-    <>
-      <GrainOverlay />
-      <div className="desk-surface">
-        <Envelope />
-        <Letterhead />
-      </div>
-    </>
+    <div className="canvas">
+      <OrganicShape />
+      <BrandVertical />
+      <Dossier />
+    </div>
   );
 }
 
