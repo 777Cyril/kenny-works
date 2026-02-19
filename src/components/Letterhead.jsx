@@ -1,4 +1,5 @@
 import './Letterhead.css';
+import BusinessCard from './BusinessCard';
 
 const clients = [
   { name: 'Tiffany & Co.', url: 'https://www.vanityfair.com/style/photos/2019/10/tiffany-mens-launch-party' },
@@ -10,7 +11,8 @@ const interests = ['Japanese Garments', 'Marathons', 'Sneaker Collecting'];
 
 export default function Letterhead() {
   return (
-    <div className="paper-letterhead">
+    <div className="paper-letterhead" style={{ position: 'relative' }}>
+      <BusinessCard />
       <div className="letterhead-header">
         Goods &amp; Objects<br />
         Est. 2024<br />
