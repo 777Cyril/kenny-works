@@ -34,7 +34,7 @@ export default function WorkSection() {
           <span>(2020 — 2024)</span>
         </div>
 
-        <ul className="space-y-12">
+        <ul className="space-y-20">
           {clients.map((client) => {
             const inner = (
               <>
