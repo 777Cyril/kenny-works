@@ -27,7 +27,7 @@ export default function HeroSection() {
           </span>
         </h1>
         <div
-          className="mt-12 reveal-text"
+          className="mt-20 reveal-text"
           style={{ transitionDelay: '200ms', textAlign: 'center', width: '100%' }}
         >
           <p style={{
