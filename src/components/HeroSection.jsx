@@ -27,8 +27,8 @@ export default function HeroSection() {
           </span>
         </h1>
         <div
-          className="mt-12 max-w-md mx-auto reveal-text"
-          style={{ transitionDelay: '200ms' }}
+          className="mt-12 reveal-text"
+          style={{ transitionDelay: '200ms', textAlign: 'center', width: '100%' }}
         >
           <p style={{
             fontFamily: "'Cormorant Garamond', serif",
@@ -36,7 +36,8 @@ export default function HeroSection() {
             textAlign: 'center',
             fontSize: '1.125rem',
             lineHeight: '1.75',
-            color: '#4B5563'
+            color: '#4B5563',
+            width: '100%',
           }}>
             Bridging high culture and street-level desire.<br />
             Sophisticated, not pretentious.
