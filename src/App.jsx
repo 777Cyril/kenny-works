@@ -1,16 +1,18 @@
 import './App.css';
-import GrainOverlay from './components/GrainOverlay';
-import Envelope from './components/Envelope';
-import Letterhead from './components/Letterhead';
+import CornerAnchors from './components/CornerAnchors';
+import HeroSection from './components/HeroSection';
+import WorkSection from './components/WorkSection';
+import AboutSection from './components/AboutSection';
+import ContactSection from './components/ContactSection';
 
 function App() {
   return (
     <>
-      <GrainOverlay />
-      <div className="desk-surface">
-        <Envelope />
-        <Letterhead />
-      </div>
+      <CornerAnchors />
+      <HeroSection />
+      <WorkSection />
+      <AboutSection />
+      <ContactSection />
     </>
   );
 }
