@@ -44,7 +44,13 @@ export default function Dossier() {
       <header className="header-main reveal">
         <div className="label">KL—2024</div>
         <div className="label">Cultural Strategy</div>
-        <div className="label">Goods &amp; Objects</div>
+        <a
+          className="label"
+          href="https://goodsandobjects.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: 'none', color: 'inherit' }}
+        >Goods &amp; Objects</a>
       </header>
 
       {/* Intro / Manifesto */}
