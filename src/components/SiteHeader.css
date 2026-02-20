@@ -11,16 +11,15 @@
 }
 
 h1 {
-  font-family: 'Anton', sans-serif;
-  font-size: clamp(4rem, 17.5vw, 100vw);
-  font-weight: 400;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(4rem, 12vw, 16rem);
+  font-weight: 900;
   font-synthesis: none;
   line-height: 0.85;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   color: var(--ink-blue);
-  white-space: nowrap;
-  width: 100%;
+  margin-left: -4px;
 }
 
 .sub-header {

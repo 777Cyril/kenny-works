@@ -12,6 +12,7 @@
   "dependencies": {
     "@fontsource/anton": "^5.2.7",
     "@fontsource/archivo-narrow": "^5.2.8",
+    "@fontsource/barlow-condensed": "^5.2.8",
     "@fontsource/jetbrains-mono": "^5.2.8",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"

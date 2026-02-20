@@ -3,9 +3,9 @@
   padding: 4rem var(--spacing-unit);
   display: flex;
   justify-content: space-between;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 900;
   font-synthesis: none;
   text-transform: uppercase;
   color: var(--ink-blue);
