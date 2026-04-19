@@ -2,7 +2,7 @@
   border-right: var(--border-weight) solid var(--ink-blue);
   padding: var(--spacing-unit);
   position: sticky;
-  top: 180px;
+  top: var(--header-h, 180px);
   height: fit-content;
 }
 

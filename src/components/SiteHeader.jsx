@@ -1,8 +1,31 @@
+import { useEffect, useRef } from 'react';
 import './SiteHeader.css';
 
 export default function SiteHeader() {
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+
+    const onScroll = () => {
+      header.classList.toggle('scrolled', window.scrollY > 80);
+    };
+
+    const ro = new ResizeObserver(() => {
+      document.documentElement.style.setProperty('--header-h', `${header.offsetHeight}px`);
+    });
+
+    ro.observe(header);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      ro.disconnect();
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
   return (
-    <header className="site-header">
+    <header className="site-header" ref={headerRef}>
       <div className="brand-block">
         <h1>Kenny Lloyd</h1>
       </div>
