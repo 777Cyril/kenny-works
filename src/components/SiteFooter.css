@@ -1,0 +1,23 @@
+.site-footer {
+  border-top: var(--border-weight) solid var(--ink-blue);
+  padding: 4rem var(--spacing-unit);
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  font-synthesis: none;
+  text-transform: uppercase;
+  color: var(--ink-blue);
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}

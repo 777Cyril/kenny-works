@@ -1,0 +1,90 @@
+.feed {
+  /* flex child, fills remaining width */
+}
+
+.case-study {
+  border-bottom: var(--border-weight) solid var(--ink-blue);
+  position: relative;
+  cursor: crosshair;
+  display: block;
+  color: var(--ink-blue);
+  text-decoration: none;
+}
+
+.case-study--last {
+  border-bottom: none;
+}
+
+.case-header {
+  padding: var(--spacing-unit);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.client-name {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  font-synthesis: none;
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+
+.case-role {
+  font-family: 'JetBrains Mono', monospace;
+  text-align: right;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.case-body {
+  padding: 0 var(--spacing-unit) var(--spacing-unit) var(--spacing-unit);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-unit);
+}
+
+.case-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(120%);
+  border: var(--border-weight) solid var(--ink-blue);
+  transition: filter 0.3s ease;
+  display: block;
+}
+
+.case-study:hover .case-image {
+  filter: grayscale(0%) contrast(100%);
+}
+
+.case-desc {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tags {
+  margin-top: 1rem;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  border: 1px solid var(--ink-blue);
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@media (max-width: 900px) {
+  .case-body {
+    grid-template-columns: 1fr;
+  }
+}

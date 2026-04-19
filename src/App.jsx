@@ -1,16 +1,20 @@
 import './App.css';
-import GrainOverlay from './components/GrainOverlay';
-import Envelope from './components/Envelope';
-import Letterhead from './components/Letterhead';
+import SiteHeader from './components/SiteHeader';
+import Sidebar from './components/Sidebar';
+import CaseStudyFeed from './components/CaseStudyFeed';
+import GoodsSection from './components/GoodsSection';
+import SiteFooter from './components/SiteFooter';
 
 function App() {
   return (
     <>
-      <GrainOverlay />
-      <div className="desk-surface">
-        <Envelope />
-        <Letterhead />
-      </div>
+      <SiteHeader />
+      <main className="grid-container">
+        <Sidebar />
+        <CaseStudyFeed />
+      </main>
+      <GoodsSection />
+      <SiteFooter />
     </>
   );
 }
