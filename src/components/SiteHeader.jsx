@@ -9,7 +9,10 @@ export default function SiteHeader() {
     if (!header) return;
 
     const onScroll = () => {
-      header.classList.toggle('scrolled', window.scrollY > 80);
+      const y = window.scrollY;
+      const collapsed = header.classList.contains('scrolled');
+      if (!collapsed && y > 100) header.classList.add('scrolled');
+      else if (collapsed && y < 50) header.classList.remove('scrolled');
     };
 
     const ro = new ResizeObserver(() => {
