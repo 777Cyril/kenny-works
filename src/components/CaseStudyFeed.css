@@ -5,7 +5,7 @@
 .case-study {
   border-bottom: var(--border-weight) solid var(--ink-blue);
   position: relative;
-  cursor: crosshair;
+  cursor: pointer;
   display: block;
   color: var(--ink-blue);
   text-decoration: none;
@@ -20,6 +20,14 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 1rem;
+}
+
+.case-header-right {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-shrink: 0;
 }
 
 .client-name {
@@ -36,6 +44,14 @@
   text-align: right;
   font-size: 0.9rem;
   margin-top: 10px;
+}
+
+.case-toggle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  opacity: 0.6;
+  flex-shrink: 0;
 }
 
 .case-body {
@@ -83,8 +99,61 @@
   font-family: 'JetBrains Mono', monospace;
 }
 
+/* Expandable breakdown */
+
+.case-expand {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.case-study--open .case-expand {
+  max-height: 1200px;
+}
+
+.case-breakdown {
+  border-top: var(--border-weight) solid var(--ink-blue);
+  padding: var(--spacing-unit);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.breakdown-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: var(--spacing-unit);
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 48, 214, 0.2);
+}
+
+.breakdown-row:last-child {
+  border-bottom: none;
+}
+
+.breakdown-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.55;
+  padding-top: 3px;
+  flex-shrink: 0;
+}
+
+.breakdown-text {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.45;
+}
+
 @media (max-width: 900px) {
   .case-body {
     grid-template-columns: 1fr;
+  }
+
+  .breakdown-row {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
   }
 }

@@ -1,98 +1,120 @@
+import { useState } from 'react';
 import './CaseStudyFeed.css';
 
 const cases = [
   {
     client: 'Tiffany & Co.',
-    years: '[2021-2023]',
+    years: '[2021–2023]',
     role: 'CULTURAL ARCHITECTURE',
     image: 'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?q=80&w=2070&auto=format&fit=crop',
-    imageAlt: 'Abstract silver texture',
-    desc: 'Redefining heritage for a digital-native generation without eroding the core. A systematic audit of brand semiotics leading to the "Not Your Mother\'s Tiffany" pivot.',
+    imageAlt: 'Tiffany jewelry',
+    summary: 'Repositioned a heritage luxury brand for a new generation without eroding the core.',
+    context: 'A heritage luxury brand facing a generational relevance crisis. The challenge: how do you modernize without alienating the core?',
+    tension: 'Legacy perception vs. cultural currency. The brand owned jewelry but had lost ownership of desire.',
+    insight: 'A new generation doesn\'t reject heritage — they remix it. The archive was raw material, not the obstacle.',
+    approach: 'Repositioned through culturally relevant partnerships across music, sports, and media. Shifted perception from legacy to culturally active.',
+    outcome: 'Set the strategic and cultural foundation for the "Not Your Mother\'s Tiffany" pivot. Expanded brand desirability across target demographics without eroding core equity.',
     tags: ['Strategy', 'Legacy', 'Rebrand'],
-    url: 'https://www.vanityfair.com/style/photos/2019/10/tiffany-mens-launch-party',
-  },
-  {
-    client: 'White Claw',
-    years: '[2019-2020]',
-    role: 'MEMETIC ENGINEERING',
-    image: 'https://images.unsplash.com/photo-1598155523122-38423bb4d6cf?q=80&w=2070&auto=format&fit=crop',
-    imageAlt: 'Water distortion',
-    desc: "Harnessing organic volatility. We didn't buy ads; we seeded narratives in underground networks and let the algorithm do the heavy lifting.",
-    tags: ['Viral Systems', 'FMCG'],
-    url: 'https://lbbonline.com/news/white-claw-unveils-the-claw-bag-made-from-can-tabs-at-new-york-fashion-week',
-  },
-  {
-    client: 'Never Ready',
-    years: '[2016-PRESENT]',
-    role: 'FOUNDER / CD',
-    image: 'https://images.unsplash.com/photo-1552346154-21d32810aba3?q=80&w=2070&auto=format&fit=crop',
-    imageAlt: 'Streetwear texture',
-    desc: 'A study in Japanese craft and NY grit. Heavyweight cotton, raw denim, and zero marketing spend. Sold out drops via SMS only.',
-    tags: ['Apparel', 'DTC', 'Craft'],
-    url: null,
   },
   {
     client: 'Apple',
     years: '[2018]',
-    role: 'SOUND DESIGN',
+    role: 'CULTURAL PROGRAMMING',
     image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2070&auto=format&fit=crop',
-    imageAlt: 'Tech minimal',
-    desc: 'Consulting on audio interface logic for spatial computing prototypes. Where analog intuition meets silicon precision.',
-    tags: ['R&D', 'Audio'],
-    url: null,
+    imageAlt: 'Apple minimal',
+    summary: 'Connected product, retail, and culture to reposition stores as creative destinations.',
+    context: 'Apple Stores as world-class retail environments — but losing their status as cultural destinations.',
+    tension: 'Product excellence existed. The store experience had become transactional rather than inspirational.',
+    insight: 'Culture doesn\'t enter through ads — it enters through rooms. Physical space is brand programming.',
+    approach: 'Connected product, retail, and culture through programming. Contributed to repositioning stores as creative and cultural environments, not just retail.',
+    outcome: 'Stores became destinations. Programming aligned product innovation with cultural identity at the point of experience.',
+    tags: ['Programming', 'Retail', 'R&D'],
+  },
+  {
+    client: 'White Claw',
+    years: '[2019–2020]',
+    role: 'MEMETIC ENGINEERING',
+    image: 'https://images.unsplash.com/photo-1598155523122-38423bb4d6cf?q=80&w=2070&auto=format&fit=crop',
+    imageAlt: 'Water distortion',
+    summary: 'Built participation-driven brand moments that seeded a cultural movement at scale.',
+    context: 'A new beverage category entering culture with zero brand equity. No legacy, no relevance — just product.',
+    tension: 'How do you build a brand moment when there\'s no brand yet?',
+    insight: 'Virality isn\'t manufactured. It\'s seeded in the right networks at the right time, then amplified by behavior.',
+    approach: 'Connected the brand to fashion, music, and festival ecosystems. Built participation-driven moments at scale. Seeded narratives underground and let organic behavior do the heavy lifting.',
+    outcome: 'White Claw became cultural shorthand. The brand didn\'t just sell — it became a reference point for an entire movement.',
+    tags: ['Viral Systems', 'FMCG', 'Culture'],
+  },
+  {
+    client: 'Google Pixel',
+    years: '[2020–2021]',
+    role: 'CULTURAL CAMPAIGN',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop',
+    imageAlt: 'Portrait photography',
+    summary: 'Positioned product innovation through a human and cultural lens — identity as the feature.',
+    context: 'Pixel needed to establish product identity against dominant competitors through a human lens, not a spec sheet.',
+    tension: 'Technology marketing often erases the people it claims to serve. Representation in product innovation is still an afterthought.',
+    insight: 'Identity is product value. For communities historically unseen, accurate representation is the feature.',
+    approach: 'Developed a culturally grounded campaign highlighting Pixel\'s ability to accurately capture all skin tones, centered on Black and Brown communities. Used Giannis Antetokounmpo as a global cultural bridge between technology, identity, and representation.',
+    outcome: 'Positioned product innovation through a human and cultural lens. Created work that felt like a truth statement, not a tagline.',
+    tags: ['Campaign', 'Identity', 'Tech'],
   },
 ];
 
 export default function CaseStudyFeed() {
+  const [expanded, setExpanded] = useState(null);
+
+  const toggle = (i) => setExpanded(expanded === i ? null : i);
+
   return (
     <section className="feed" id="work">
-      {cases.map((c, i) => {
-        const inner = (
-          <>
-            <div className="case-header">
-              <h2 className="client-name">{c.client}</h2>
+      {cases.map((c, i) => (
+        <article
+          key={i}
+          className={`case-study${expanded === i ? ' case-study--open' : ''}${i === cases.length - 1 && expanded !== i ? ' case-study--last' : ''}`}
+          onClick={() => toggle(i)}
+        >
+          <div className="case-header">
+            <h2 className="client-name">{c.client}</h2>
+            <div className="case-header-right">
               <div className="case-role">
-                <span>{c.years}</span><br />
+                <span>{c.years}</span>
+                <br />
                 <span>{c.role}</span>
               </div>
+              <span className="case-toggle">{expanded === i ? '[ − ]' : '[ + ]'}</span>
             </div>
-            <div className="case-body">
-              <img
-                src={c.image}
-                alt={c.imageAlt}
-                className="case-image"
-              />
-              <div className="case-desc">
-                <p>{c.desc}</p>
-                <div className="tags">
-                  {c.tags.map((tag) => (
-                    <span key={tag} className="tag">{tag}</span>
-                  ))}
-                </div>
+          </div>
+
+          <div className="case-body">
+            <img src={c.image} alt={c.imageAlt} className="case-image" />
+            <div className="case-desc">
+              <p>{c.summary}</p>
+              <div className="tags">
+                {c.tags.map((tag) => (
+                  <span key={tag} className="tag">{tag}</span>
+                ))}
               </div>
             </div>
-          </>
-        );
+          </div>
 
-        return c.url ? (
-          <a
-            key={i}
-            href={c.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`case-study${i === cases.length - 1 ? ' case-study--last' : ''}`}
-          >
-            {inner}
-          </a>
-        ) : (
-          <article
-            key={i}
-            className={`case-study${i === cases.length - 1 ? ' case-study--last' : ''}`}
-          >
-            {inner}
-          </article>
-        );
-      })}
+          <div className="case-expand">
+            <div className="case-breakdown">
+              {[
+                ['CONTEXT', c.context],
+                ['CULTURAL TENSION', c.tension],
+                ['INSIGHT', c.insight],
+                ['APPROACH', c.approach],
+                ['OUTCOME', c.outcome],
+              ].map(([label, text]) => (
+                <div key={label} className="breakdown-row">
+                  <span className="breakdown-label">{label}</span>
+                  <p className="breakdown-text">{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </article>
+      ))}
     </section>
   );
 }
