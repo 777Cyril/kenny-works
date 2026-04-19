@@ -46,6 +46,36 @@
   opacity: 0.8;
 }
 
+.op-ed-box {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.op-ed-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  opacity: 0.55;
+  text-transform: uppercase;
+}
+
+.op-ed-link {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1rem;
+  line-height: 1.35;
+  color: var(--ink-blue);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink-blue);
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease;
+}
+
+.op-ed-link:hover {
+  opacity: 0.6;
+}
+
 @media (max-width: 900px) {
   .sidebar {
     position: relative;

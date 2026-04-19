@@ -1,38 +1,62 @@
 .goods-section {
   border-top: var(--border-weight) solid var(--ink-blue);
-  padding: var(--spacing-unit);
   background: var(--ink-blue);
   color: var(--paper);
 }
 
 .goods-header {
+  padding: var(--spacing-unit);
+  border-bottom: 1px solid rgba(242, 242, 242, 0.25);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.goods-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.goods-title {
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 900;
   font-synthesis: none;
   text-transform: uppercase;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid var(--paper);
-  padding-bottom: 1rem;
-  display: flex;
-  justify-content: space-between;
+  line-height: 1;
+}
+
+.goods-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  opacity: 0.6;
+}
+
+.goods-desc {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.45;
+  max-width: 600px;
+  padding-top: 4px;
+  opacity: 0.85;
 }
 
 .goods-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--border-weight);
-  background: var(--paper);
-  border: var(--border-weight) solid var(--paper);
+  background: rgba(242, 242, 242, 0.25);
 }
 
 .good-item {
   background: var(--ink-blue);
   padding: 2rem;
-  aspect-ratio: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 1.25rem;
   transition: background 0.2s;
 }
 
@@ -40,18 +64,36 @@
   background: #002299;
 }
 
-.good-item span {
+.good-id {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.8rem;
-}
-
-.good-item h3 {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-size: 1.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  opacity: 0.55;
   text-transform: uppercase;
 }
 
+.good-title {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+
+.good-desc {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 1rem;
+  line-height: 1.45;
+  opacity: 0.75;
+  margin-top: auto;
+}
+
 @media (max-width: 900px) {
+  .goods-header {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
   .goods-grid {
     grid-template-columns: 1fr;
   }
